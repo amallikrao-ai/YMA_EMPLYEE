@@ -1,21 +1,32 @@
-managed implementation in class zbp_i_ma_employees1 unique;
+managed implementation in class zbp_i_ma_employees2 unique;
 strict ( 2 );
+with draft;
 
-define behavior for YI_MA_EMPLOYEES1 //alias <alias_name>
+define behavior for YI_MA_EMPLOYEES1 alias _employees
 persistent table yma_employees
-lock master
+draft table YMA_EMPLOYEES_D
+lock master total etag dateofbirth
 authorization master ( instance )
 //etag master <field_name>
 {
   create ( authorization : global );
   update;
   delete;
-  field ( readonly ) Empid;
+  field ( numbering: managed ) Empid;
   association _items { create; }
+
+  draft action Activate;
+  draft action Edit;
+  draft action Discard;
+  draft action Resume;
+
+  draft determine action Prepare;
+
 }
 
 define behavior for YI_MA_EMP_ITEMS1 //alias <alias_name>
 persistent table yma_emp_items
+draft table yma_emp_items_d
 lock dependent by _employees
 authorization dependent by _employees
 //etag master <field_name>

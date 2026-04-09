@@ -2,27 +2,36 @@
 @EndUserText.label: 'Annotations Employee Items Projection'
 annotate view YC_MA_EMP_ITEMS1 with {
 
+
+  @UI.lineItem: [{ position: 10 }]
   @EndUserText.label: 'Employee ID'
   Empid;
 
+  @UI.lineItem: [{ position: 20 }]
   @EndUserText.label: 'Item ID'
   ItemId;
 
+  @UI.lineItem: [{ position: 30 }]
   @EndUserText.label: 'Item Type'
   Itemtype;
 
+  @UI.lineItem: [{ position: 40 }]
   @EndUserText.label: 'Item Description'
   Itemdesc;
 
+  @UI.lineItem: [{ position: 50 }]
   @EndUserText.label: 'Assign Date'
   Assigndate;
 
+  @UI.lineItem: [{ position: 60 }]
   @EndUserText.label: 'Return Date'
   Returndate;
 
+  @UI.lineItem: [{ position: 70 }]
   @EndUserText.label: 'Status'
   Status;
 
+  @UI.lineItem: [{ position: 80 }]
   @EndUserText.label: 'Remarks'
   Remarks;
 

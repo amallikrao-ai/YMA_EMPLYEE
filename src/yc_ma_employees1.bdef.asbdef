@@ -1,10 +1,26 @@
 projection;
 strict ( 2 );
+use draft;
 
-define behavior for YC_MA_EMPLOYEES1 //alias <alias_name>
+define behavior for YC_MA_EMPLOYEES1 alias _employees
 {
   use create;
   use update;
   use delete;
 
+  use action Activate;
+  use action Edit;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _items { create; }
+}
+
+define behavior for YC_MA_EMP_ITEMS1 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _employees;
 }
