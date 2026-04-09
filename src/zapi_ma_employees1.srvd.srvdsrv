@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition Employee'
+define service ZAPI_MA_EMPLOYEES1 {
+  expose YC_MA_EMPLOYEES1;
+  expose YC_MA_EMP_ITEMS1;
+}

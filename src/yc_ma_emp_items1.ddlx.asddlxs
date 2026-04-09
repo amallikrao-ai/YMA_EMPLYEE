@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+@EndUserText.label: 'Annotations Employee Items Projection'
+annotate view YC_MA_EMP_ITEMS1 with {
+
+  @EndUserText.label: 'Employee ID'
+  Empid;
+
+  @EndUserText.label: 'Item ID'
+  ItemId;
+
+  @EndUserText.label: 'Item Type'
+  Itemtype;
+
+  @EndUserText.label: 'Item Description'
+  Itemdesc;
+
+  @EndUserText.label: 'Assign Date'
+  Assigndate;
+
+  @EndUserText.label: 'Return Date'
+  Returndate;
+
+  @EndUserText.label: 'Status'
+  Status;
+
+  @EndUserText.label: 'Remarks'
+  Remarks;
+
+  /* Association Label */
+  @EndUserText.label: 'Employee'
+  _employees;
+}

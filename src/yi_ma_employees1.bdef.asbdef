@@ -1,0 +1,27 @@
+managed implementation in class zbp_i_ma_employees1 unique;
+strict ( 2 );
+
+define behavior for YI_MA_EMPLOYEES1 //alias <alias_name>
+persistent table yma_employees
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Empid;
+  association _items { create; }
+}
+
+define behavior for YI_MA_EMP_ITEMS1 //alias <alias_name>
+persistent table yma_emp_items
+lock dependent by _employees
+authorization dependent by _employees
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Empid, ItemId;
+  association _employees;
+}
