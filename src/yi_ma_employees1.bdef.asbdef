@@ -7,7 +7,7 @@ persistent table yma_employees
 draft table YMA_EMPLOYEES_D
 lock master total etag dateofbirth
 authorization master ( instance )
-//etag master <field_name>
+etag master Empid
 {
   create ( authorization : global );
   update;
@@ -33,6 +33,6 @@ authorization dependent by _employees
 {
   update;
   delete;
-  field ( readonly ) Empid, ItemId;
+  field ( readonly ) Empid;
   association _employees;
 }
