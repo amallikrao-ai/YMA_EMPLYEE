@@ -49,6 +49,7 @@ annotate view YC_MA_EMPLOYEES1 with
   @UI.selectionField: [{ position: 50 }]
   @UI.identification: [{ position: 50 }]
   @EndUserText.label: 'Gender'
+  @Consumption.valueHelpDefinition: [{ entity: {  name: 'ZI_GENDER_VH', element: 'Gender' } }]
   Gender;
 
   @UI.lineItem: [{ position: 60 }]
